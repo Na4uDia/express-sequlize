@@ -15,6 +15,8 @@ app.delete('/articles', (request, response) => {
         .then((decoded) => articlesDac.deleteArticle(data.id, decoded.id)
             .then((deleteStatus) => response.send(deleteStatus)))
         .catch((error) => response.status(error.status).send(error.message));
+  } else {
+    response.status(400).send({error: `id "${data.id}" is require!!!`});
   }
 });
 

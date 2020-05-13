@@ -15,6 +15,8 @@ app.delete('/comments', (request, response) => {
         .then((decoded) => commentsDac.deleteComment(data.id, decoded.id)
             .then((deleteStatus) => response.send(deleteStatus)))
         .catch((error) => response.status(error.status).send(error.message));
+  } else {
+    response.status(400).send({status: 'Comment is not found'});
   }
 });
 

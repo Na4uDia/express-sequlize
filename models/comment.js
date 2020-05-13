@@ -3,16 +3,15 @@ const Comment = sequelize.define('comment', {
   article_id: {
     type: Sequelize.INTEGER,
     allowNull: false,
-    primaryKey: true,
     reference: {
       model: 'articles',
       key: 'id',
     },
+    onDelete: 'cascade',
   },
   user_id: {
     type: Sequelize.INTEGER,
     allowNull: false,
-    primaryKey: true,
     reference: {
       model: 'users',
       key: 'id',

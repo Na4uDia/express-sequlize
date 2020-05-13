@@ -12,7 +12,7 @@ sequelize = new Sequelize('articless', 'root', 'root', {
   },
 });
 
-console.log('!!!');
+console.log('We are here!!!');
 
 const db = {};
 
